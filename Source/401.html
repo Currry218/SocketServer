@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>401 Unauthorized</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+			@import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
+			.error-container {
+			  text-align: center;
+			  font-size: 106px;
+			  font-family: 'Catamaran', sans-serif;
+			  font-weight: 800;
+			  margin: 70px 15px;
+			}
+			.error-container > span {
+			  display: inline-block;
+			  position: relative;
+			}
+			.error-container > span.four {
+			  width: 136px;
+			  height: 43px;
+			  border-radius: 999px;
+			  background:
+				linear-gradient(140deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 43%, transparent 44%, transparent 100%),
+				linear-gradient(105deg, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.06) 41%, rgba(255, 255, 255, 0.07) 76%, transparent 77%, transparent 100%),
+				linear-gradient(to right, #9cb5d8, #7b9de2);
+			}
+			.error-container > span.four:before,
+			.error-container > span.four:after {
+			  content: '';
+			  display: block;
+			  position: absolute;
+			  border-radius: 999px;
+			}
+			.error-container > span.four:before {
+			  width: 43px;
+			  height: 156px;
+			  left: 60px;
+			  bottom: -43px;
+			  background:
+				linear-gradient(128deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 40%, transparent 41%, transparent 100%),
+				linear-gradient(116deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 50%, transparent 51%, transparent 100%),
+				linear-gradient(to top, #8775e0, #a993f2, #b87ff8, #7d66fd, #84c1ff);
+			}
+			.error-container > span.four:after {
+			  width: 137px;
+			  height: 43px;
+			  transform: rotate(-49.5deg);
+			  left: -18px;
+			  bottom: 36px;
+			  background: linear-gradient(to right, #7a749d, #95abb8, #9a9ecc, #96bcd7, #78cde0);
+			}
+			
+			.error-container > span.zero {
+			  vertical-align: text-top;
+			  width: 156px;
+			  height: 156px;
+			  border-radius: 999px;
+			  background: linear-gradient(-45deg, transparent 0%, rgba(0, 0, 0, 0.06) 50%,  transparent 51%, transparent 100%),
+				linear-gradient(to top right, #74889d, #74859d, #95a4b8, #9aa7cc, #96c9d7, #86bfed, #86cced);
+			  overflow: hidden;
+			  animation: bgshadow 5s infinite;
+			}
+			.error-container > span.zero:before {
+			  content: '';
+			  display: block;
+			  position: absolute;
+			  transform: rotate(45deg);
+			  width: 90px;
+			  height: 90px;
+			  background-color: transparent;
+			  left: 0px;
+			  bottom: 0px;
+			  background:
+				linear-gradient(95deg, transparent 0%, transparent 8%, rgba(187, 183, 183, 0.07) 9%, transparent 50%, transparent 100%),
+				linear-gradient(85deg, transparent 0%, transparent 19%, rgba(198, 193, 193, 0.05) 20%, rgba(0, 0, 0, 0.07) 91%, transparent 92%, transparent 100%);
+			}
+			.error-container > span.zero:after {
+			  content: '';
+			  display: block;
+			  position: absolute;
+			  border-radius: 999px;
+			  width: 70px;
+			  height: 70px;
+			  left: 43px;
+			  bottom: 43px;
+			  background: #3d3d41;
+			  box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+			}
+			.error-container > span.one {
+				width: 136px;
+				height: 43px;
+				border-radius: 999px;
+			  }
+			.error-container > span.one:before,
+			.error-container > span.one:after {
+			  content: '';
+			  display: block;
+			  position: absolute;
+			  border-radius: 999px;
+			}
+			.error-container > span.one:after {
+				content: '';
+				display: block;
+				position: absolute;
+				border-radius: 999px;
+			  }
+			  .error-container > span.one:before {
+				width: 120px;
+				height: 43px;
+				transform: rotate(-60.5deg);
+				left: 5px;
+				bottom: 36px;
+				background: linear-gradient(to right, #7a749d, #95abb8, #9a9ecc, #96bcd7, #78cde0);
+			  }
+			  .error-container > span.one:after {
+				width: 43px;
+				height: 156px;
+				left: 63px;
+				bottom: -44px;
+				background:
+				  linear-gradient(128deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 40%, transparent 41%, transparent 100%),
+				  linear-gradient(116deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 50%, transparent 51%, transparent 100%),
+				  linear-gradient(to top, #8775e0, #a993f2, #b87ff8, #7d66fd, #84c1ff);
+			  }
+
+			.screen-reader-text {
+				position: absolute;
+				top: -9999em;
+				left: -9999em;
+			}
+			
+			body {
+			  background-color: #3d3d41;
+			  margin-bottom: 50px;
+			}
+			html, button, input, select, textarea {
+				font-family: 'Montserrat', Helvetica, sans-serif;
+				color: #bbb;
+			}
+			.zoom-area { 
+			  max-width: 490px;
+			  margin: 30px auto 30px;
+			  font-size: 30px;
+			  text-align: center;
+			}
+		</style>
+    </head>
+    <body>
+		<section class="error-container">
+		  <span class="four"><span class="screen-reader-text">4</span></span>
+		  <span class="zero"><span class="screen-reader-text">0</span></span>
+		  <span class="one"><span class="screen-reader-text">1</span></span>
+		</section>
+		<p class="zoom-area"><b>PAGE UNAUTHORIZED </b></p>
+    </body>
+</html>
